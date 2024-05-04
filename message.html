@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"><html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="google-site-verification" content="o" />
+<META charset="UTF-8">     
+<META http-equiv="X-UA-Compatible" content="IE=edge">     
+<META name="viewport" content="width=device-width, initial-scale=1.0">
+<LINK href="http://others/about.html">
+<LINK href="Main.html">
+<LINK href="style.css" rel="stylesheet" type="text/css">     
+<LINK href="https://fonts.gstatic.com"> 
+<LINK href="Google_files/app.htm"> 
+<LINK href="_pgtres" 
+rel="preconnect">     <LINK href="https://fonts.googleapis.com/css2?family=Poppins:wht@200;300;400&amp;display=swap" 
+rel="stylesheet">     <LINK href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" 
+rel="stylesheet">     <LINK href="index.html">     <LINK href="about.html">     
+<LINK href="pinetree.html">     <LINK href="List.html">     <LINK href="Custom.html"> 
+    <LINK href="contact.html">     <LINK href="ai.html">     <LINK href="amazon.html"> 
+<LINK href="cloths.html">     <LINK href="food.html"> 
+    <LINK href="gold.html">     <LINK href="index.html">   <LINK href="style.css">
+<LINK href="healthcare.html">     <LINK href="morenochi.html"> 
+    <LINK href="message.html">   <LINK href="messgae/style.css">   <TITLE>Message</TITLE> 
+    <link rel="stylesheet"> <link href="messagae/style.css">
+</head>
+    <style href="https://fonts.googleapois.com/css2?family=roboto:wght@300&display=swap">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #2b18df;
+    /* fallback for old browsers*/
+    background: -webkit-linear-gradient(to right, #3f08d8, #3515c4, #103ccc);
+    /* chrome 10-25, safari 5.1-6 */
+    background: linear-gradient(to right,  #1619d3, #3320e3, #1618b4 );
+    /* W3C, IE 10+/ Edge, Firfox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.form {
+    width: 500px;
+    padding: 6px;
+}
+input, 
+textarea {
+    width: 100%;
+    padding: 6px;
+    outline: none;
+    border: none;
+    margin: 6px 0px;
+}
+
+#btn {
+    width: 150px;
+    padding: 6px;
+    cursor: pointer;
+}
+</style>
+<body>
+
+<table width="137" border="0">
+    <div class="form">
+        <input type="text" placeholder="Name" id="name" autocomplete="off">
+        <input type="E-mail" placeholder="E-mail" id="E-mail" autocomplete="off">
+        <input type="text" placeholder="Subject" id="Subject" autocomplete="off">
+        <textarea id="message" placeholder="Message" cols="30" row="10"></textarea>
+        <button id="btn">Send</button>
+    </div>
+</table>
+
+</body>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click',function(e){
+        e.preventDefault()
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+        var body = 'name:' +name + '<br/> email: ' + email + '<br/> subject' + subject + '<br/> message' + message;
+
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "username",
+            Password : "password",
+            To: 'them@website.com',
+            From : email,
+            Subject : subject,
+            Body : Body,
+        }).then(
+            message => alert(message)
+        );
+    })
+</script>
+</html>
